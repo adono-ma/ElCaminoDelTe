@@ -490,29 +490,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Embedded Messaging Salesforce -->
-  <script type="text/javascript">
-    function initEmbeddedMessaging() {
-      try {
-        embeddedservice_bootstrap.settings.language = 'es';
+  <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-        embeddedservice_bootstrap.init(
-          '00DNS00000rGHKy',
-          'AeroSA',
-          'https://aqua-dev-editon-dev-ed.develop.my.site.com/ESWAeroSA1779151194755',
-          {
-            scrt2URL: 'https://aqua-dev-editon-dev-ed.develop.my.salesforce-scrt.com'
-          }
-        );
-      } catch (err) {
-        console.error('Error loading Embedded Messaging: ', err);
-      }
-    }
-  </script>
+			embeddedservice_bootstrap.init(
+				'00DNS00000rGHKy',
+				'CaminoTeGit',
+				'https://aqua-dev-editon-dev-ed.develop.my.site.com/ESWCaminoTeGit1779649397998',
+				{
+					scrt2URL: 'https://aqua-dev-editon-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://aqua-dev-editon-dev-ed.develop.my.site.com/ESWCaminoTeGit1779649397998/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-  <script type="text/javascript"
-    src="https://aqua-dev-editon-dev-ed.develop.my.site.com/ESWAeroSA1779151194755/assets/js/bootstrap.min.js"
-    onload="initEmbeddedMessaging()">
-    </script>
 </body>
 
 </html>
