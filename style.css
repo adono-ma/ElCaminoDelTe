@@ -1,0 +1,495 @@
+/* Variables globales claro/oscuro */
+:root {
+  --zen-gold: #D97706;
+  --zen-brown: #8B4513;
+  --bg-tea: linear-gradient(135deg, #597901, #b46203);
+  --bg-tea-dark: linear-gradient(135deg, #2d5016, #5a2d0f);
+  --card-dark-bg: #1e1e1e;
+  --text-dark: #f5f5f5;
+  --border-dark: #333;
+}
+
+body {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 400;
+}
+
+.card-title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+}
+
+/* Colores té claros */
+.bg-tea {
+  background: var(--bg-tea);
+}
+
+.btn-tea {
+  background: var(--zen-gold);
+  border-color: var(--zen-gold);
+  color: #000000;
+}
+
+.btn-tea:hover {
+  background: #b96806;
+}
+
+.btn-reset {
+  background: #597901;
+  border-color: #597901;
+  color: #fff;
+}
+
+.btn-reset:hover {
+  background: #476d2d;
+}
+
+/* Navbar y footer claros */
+.navbar.bg-tea {
+  background: var(--bg-tea);
+}
+
+.footer.bg-tea {
+  background: var(--bg-tea);
+}
+
+/* Galería, carrusel, cards */
+.navbar-brand i {
+  font-size: 1.5rem;
+}
+
+.navbar .dropdown-menu {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.card-img-top,
+.img-fluid {
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-item img {
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+}
+
+#teaCarousel .carousel-caption {
+  bottom: 2rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  flex-grow: 1;
+}
+
+.badge {
+  align-self: flex-start;
+}
+
+/* Gráfico con altura fija */
+#chartTemperaturas {
+    max-height: 350px !important;
+    height: 350px !important;
+}
+
+.card-body:has(#chartTemperaturas) {
+    padding: 1rem;
+    min-height: 400px;
+}
+
+
+/* Badges h2 en línea */
+h2 .badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.6em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Responsive badges */
+@media (max-width: 576px) {
+  h2 .badge {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Tabla té clara */
+.table-tea {
+  background: #f1c182;
+  color: var(--zen-brown);
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 250px;
+  }
+
+  .card-img-top,
+  .img-fluid {
+    height: 180px;
+  }
+}
+
+.page-tipos header h1 {
+  letter-spacing: 0.03em;
+}
+
+.page-tipos .card-title {
+  color: var(--zen-brown);
+}
+
+.page-tipos .card {
+  border: none;
+}
+
+.page-ceremonia header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0.75rem;
+}
+
+.page-ceremonia h1 {
+  letter-spacing: 0.05em;
+}
+
+.page-ceremonia .list-group-item {
+  border-left: 4px solid var(--zen-gold);
+}
+
+.page-ceremonia .card-img-top {
+  object-fit: cover;
+}
+
+/* =================================== MODO OSCURO - TÉ TEMÁTICO ====================================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Navbar/footer oscuro - COLORES TÉ OSCUROS */
+body.dark-mode .navbar,
+body.dark-mode .navbar.bg-tea {
+  background: var(--bg-tea-dark);
+}
+
+body.dark-mode .footer,
+body.dark-mode .footer.bg-tea {
+  background: var(--bg-tea-dark);
+  color: #f5f5f5;
+}
+
+body.dark-mode #footer a,
+body.dark-mode #footer * {
+  color: #f5f5f5;
+}
+
+/* Dropdown oscuro */
+body.dark-mode .navbar .dropdown-menu {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #f5f5f5;
+}
+
+body.dark-mode .dropdown-item {
+  color: #f5f5f5;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* login */
+body.dark-mode .modal-content,
+body.dark-mode #loginModal .modal-header,
+body.dark-mode #loginModal .modal-body,
+body.dark-mode #formLogin .form-control,
+body.dark-mode #formLogin .form-select,
+body.dark-mode #loginError {
+  background-color: var(--card-dark-bg);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark-mode #loginModal .modal-header {
+  background: var(--bg-tea-dark);
+}
+
+body.dark-mode #formLogin .form-control::placeholder {
+  color: #aaaaaa;
+}
+
+body.dark-mode #formLogin .form-label {
+  color: var(--text-dark);
+}
+
+
+/* Cards y elementos BLANCOS -> OSCUROS (si quito el !important no funciona) */
+body.dark-mode .card,
+body.dark-mode .bg-white,
+body.dark-mode .card-body,
+body.dark-mode .card-header,
+body.dark-mode .bg-light,
+body.dark-mode div[class*="bg-"] {
+  background-color: var(--card-dark-bg) !important;
+  color: var(--text-dark);
+  border-color: var(--border-dark) !important;
+}
+
+/* TABLA TÉ OSCURA - COMPLETO (reemplaza la sección anterior) */
+body.dark-mode #tabla .table,
+body.dark-mode #tabla .table thead.table-tea,
+body.dark-mode #tabla .table thead th,
+body.dark-mode #tabla .table tbody tr,
+body.dark-mode #tabla .table tbody td,
+body.dark-mode #tabla .table-striped>tbody>tr:nth-of-type(odd)>td,
+body.dark-mode #tabla .table-hover>tbody>tr:hover>td {
+  background-color: #2a4a2a;
+  background-image: none;
+  box-shadow: inset 0 0 0 9999px #2a4a2a;
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark-mode #tabla .table thead.table-tea th {
+  color: #f0d9b5;
+  border-bottom-color: #597901;
+}
+
+/* GUIA RÁPIDA .list-group (dentro card) - MÁS ESPECÍFICO */
+body.dark-mode .guia-rapida .list-group,
+body.dark-mode .guia-rapida .list-group-flush,
+body.dark-mode .card .list-group,
+body.dark-mode .card .list-group-flush,
+body.dark-mode .table-tea {
+  background-color: var(--card-dark-bg);
+}
+
+body.dark-mode .guia-rapida .list-group-item,
+body.dark-mode .card .list-group-item,
+body.dark-mode .table-tea {
+  background-color: var(--card-dark-bg);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
+/* BOTONES PAÍSES (Japón, China, etc.) - ESPECÍFICO Y VISIBLE */
+body.dark-mode .guia-rapida .list-group-item .btn,
+body.dark-mode .card .list-group-item .btn,
+body.dark-mode .list-group-item .btn-país,
+body.dark-mode .btn-pais {
+  background-color: var(--zen-gold);
+  color: #ffffff;
+  border-color: var(--zen-gold);
+}
+
+body.dark-mode .guia-rapida .list-group-item .btn:hover,
+body.dark-mode .card .list-group-item .btn:hover,
+body.dark-mode .list-group-item .btn-país:hover {
+  background-color: #b96806;
+}
+
+/* PARA EL RELOJ*/
+.dark-mode .btn-outline-dark {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dark-mode .btn-outline-dark:hover,
+.dark-mode .btn-outline-dark:active {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* ToggleReloj específico */
+.dark-mode #toggleReloj,
+.dark-mode #toggleReloj:hover {
+  color: #ffffff;
+  border-color: #dee2e6;
+}
+
+/* Carrusel oscuro */
+body.dark-mode #teaCarousel.carousel,
+body.dark-mode #teaCarousel .carousel-inner,
+body.dark-mode #teaCarousel .carousel-item {
+  background-color: var(--card-dark-bg);
+}
+
+body.dark-mode #teaCarousel .carousel-control-prev,
+body.dark-mode #teaCarousel .carousel-control-next {
+  filter: invert(1);
+}
+
+body.dark-mode #teaCarousel .carousel-indicators [data-bs-target],
+body.dark-mode #teaCarousel .carousel-indicators .active {
+  height: 0em;
+  background-color: var(--zen-gold);
+  border-color: var(--zen-gold);
+}
+
+body.dark-mode #teaCarousel .carousel-indicators li {
+  background-color: #666;
+  border-color: #666;
+}
+
+/* breadcrumb en modo claro */
+.breadcrumb-item a[href="#"],
+.breadcrumb-item.active {
+  color: #084298;
+  font-weight: 500;
+}
+
+/* breadcrumb en modo oscuro */
+body.dark-mode .breadcrumb ol.breadcrumb,
+body.dark-mode .breadcrumb-item,
+body.dark-mode .breadcrumb-item a[href="#"],
+body.dark-mode .breadcrumb-item.active {
+  color: #ffffff;
+}
+
+/* TOAST CRONÓMETRO - HEADER FIJO EN OSCURO */
+body.dark-mode #toastCrono .toast-header {
+    background-color: rgba(89, 121, 1, 0.9);  /* verde té oscuro */
+    color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode #toastCrono .toast-body {
+    background-color: rgba(42, 74, 42, 0.95);  /* verde muy oscuro */
+    color: #f5f5f5;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #toastCrono {
+    background-color: rgba(41, 58, 41, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode #toastCronoDisplay {
+    color: #d5bff1 !important;  /* blanco puro = 21:1 */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);  /* sombra para legibilidad */
+}
+
+/* Botón cerrar toast en oscuro */
+body.dark-mode #toastCrono .btn-close-white {
+    filter: brightness(1.2);
+}
+
+/* Formularios, alertas, etc. */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #222;
+  color: #f5f5f5;
+  border-color: #444 ;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #aaaaaa;
+}
+
+body.dark-mode .form-check-label {
+  color: #f5f5f5;
+}
+
+body.dark-mode .alert-success {
+  background-color: #1a5f1a;
+  color: #f5f5f5;
+  border-color: #2d7d32;
+}
+
+body.dark-mode .text-muted {
+  color: #bbbbbb !important;
+}
+
+/* Botones té */
+body.dark-mode .btn-tea,
+body.dark-mode .btn-reset {
+  color: #ffffff;
+}
+
+/* Servicios: */
+/* Contenedor principal para alinear */
+@media (min-width: 1200px) {
+  main .row:first-of-type::after {
+    content: '';
+    display: block;
+    height: 20vh;
+    /* Espacio para bajar servicios */
+  }
+
+  #servicios {
+    margin-top: 0;
+    position: relative;
+    top: 33vh;
+
+  }
+
+  /* ACCESIBILIDAD*/
+
+  /* Toggle theme accesible */
+  #toggleThemeBtn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .breadcrumb a:focus,
+  .btn-tea:focus {
+    outline: 2px solid #fdfcfc;
+    outline-offset: 2px;
+  }
+
+  /* Parte del carrusel */
+  .carousel-indicators button:focus {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+  }
+
+  /* 1. Indicadores carrusel - aria-label invisible */
+  .carousel-indicators button[aria-label]:before,
+  .carousel-indicators button:before {
+    content: "Ir a diapositiva " attr(data-bs-slide-to, "actual");
+    position: absolute;
+    left: -2000px;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  /* 2. Imágenes carrusel - alt invisible */
+  .carousel-item img:before {
+    content: "Imagen ilustrativa de té ";
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+  }
+}

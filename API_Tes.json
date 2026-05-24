@@ -1,0 +1,248 @@
+{
+  "uuid": "a2f1f885-eb8a-4f5f-b6fc-ab2b13116ac7",
+  "lastMigration": 33,
+  "name": "API Tes (copy) (copy)",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "12a52f7e-09f5-4a3e-a62f-212cfa106ef1",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/tes",
+      "responses": [
+        {
+          "uuid": "e7cbbf8f-a26e-4498-88c2-66b7c13bb656",
+          "body": "[\n  {\n    \"id\": 1,\n    \"tipo\": \"verde Sencha\",\n    \"origen\": \"Japón\",\n    \"temperatura\": \"70°C\",\n    \"infusion\": \"2-3 min\"\n  },\n  {\n    \"id\": 2,\n    \"tipo\": \"verde Longjing\",\n    \"origen\": \"China\",\n    \"temperatura\": \"75°C\",\n    \"infusion\": \"2-3 min\"\n  },\n  {\n    \"id\": 3,\n    \"tipo\": \"negro Assam\",\n    \"origen\": \"India\",\n    \"temperatura\": \"95°C\",\n    \"infusion\": \"3-5 min\"\n  },\n  {\n    \"id\": 4,\n    \"tipo\": \"negro Darjeeling\",\n    \"origen\": \"India\",\n    \"temperatura\": \"90°C\",\n    \"infusion\": \"3-4 min\"\n  },\n  {\n    \"id\": 5,\n    \"tipo\": \"blanco Pai Mu Tan\",\n    \"origen\": \"China\",\n    \"temperatura\": \"75°C\",\n    \"infusion\": \"4-5 min\"\n  },\n  {\n    \"id\": 6,\n    \"tipo\": \"Oolong Tieguanyin\",\n    \"origen\": \"China\",\n    \"temperatura\": \"85°C\",\n    \"infusion\": \"3-4 min\"\n  },\n  {\n    \"id\": 7,\n    \"tipo\": \"Oolong Milk\",\n    \"origen\": \"Taiwan\",\n    \"temperatura\": \"85°C\",\n    \"infusion\": \"3-4 min\"\n  },\n  {\n    \"id\": 8,\n    \"tipo\": \"rojo Pu-erh\",\n    \"origen\": \"China\",\n    \"temperatura\": \"95°C\",\n    \"infusion\": \"4-5 min\"\n  },\n  {\n    \"id\": 9,\n    \"tipo\": \"matcha\",\n    \"origen\": \"Japón\",\n    \"temperatura\": \"70°C\",\n    \"infusion\": \"1-2 min\"\n  },\n  {\n    \"id\": 10,\n    \"tipo\": \"chai especiado\",\n    \"origen\": \"India\",\n    \"temperatura\": \"95°C\",\n    \"infusion\": \"5 min\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "d57a8b0b-71d8-4725-82fe-d4ea9602baf6",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/tes/{{params.id}}",
+      "responses": [
+        {
+          "uuid": "91535b64-ae7f-402a-b595-5d0543482c5e",
+          "body": "{\n  \"success\": true,\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "b75ce427-361e-4de3-a580-8f47e64555c4",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/login",
+      "responses": [
+        {
+          "uuid": "56691711-a8f1-40fd-9d13-0bbef4a3428f",
+          "body": "{\n    \"success\": true,\n    \"token\": \"Login OK!\",\n    \"mensaje\": \"Bienvenido al Camino del Té\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "61679e6e-c443-4567-b417-161ec914c8e7",
+          "body": "{\n  \"success\": false,\n  \"error\": \"Credenciales inválidas\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "username",
+              "value": "admin",
+              "invert": true,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "1234",
+              "invert": true,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "12656b73-28da-40b4-869a-77c37ec8d19f",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/tes/1",
+      "responses": [
+        {
+          "uuid": "8bc21eda-f59f-47ca-8bd9-f2ef3b6c5ef3",
+          "body": "{\"id\": 1,\n  \"tipo\": \"verde Sencha\",\n  \"origen\": \"Japón\",\n  \"temperatura\": \"70°C\",\n  \"infusion\": \"2-3 min\",\n  \"descripcion\": \"Té verde japonés clásico, fresco y energizante.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "b75ce427-361e-4de3-a580-8f47e64555c4"
+    },
+    {
+      "type": "route",
+      "uuid": "12a52f7e-09f5-4a3e-a62f-212cfa106ef1"
+    },
+    {
+      "type": "route",
+      "uuid": "d57a8b0b-71d8-4725-82fe-d4ea9602baf6"
+    },
+    {
+      "type": "route",
+      "uuid": "12656b73-28da-40b4-869a-77c37ec8d19f"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

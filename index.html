@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Camino del Té</title>
+
+  <!-- css de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- iconos de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ccs de estilos -->
+  <link rel="stylesheet" href="style.css">
+  <!-- fuente de la página -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR CORREGIDA - 100% Accesible -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-tea shadow-sm">
+    <div class="container">
+      <!-- Logo/Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-cup-hot me-2"></i>
+        El Camino del Té
+      </a>
+
+      <!-- Toggler móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Contenido colapsable -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+
+        <!-- MENÚ PRINCIPAL - SOLO <a> en <li> -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#tipos">Tipos de té</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#ceremonia">Ceremonia</a>
+          </li>
+          <!-- Dropdown Recursos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Recursos
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#formulario">Suscripción</a></li>
+              <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#footer">Contacto</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- BOTONES - FUERA del <ul> navbar-nav -->
+        <div class="navbar-nav ms-auto d-flex align-items-center gap-2">
+
+          <!-- Toggle Theme - Contenedor propio -->
+          <div class="nav-item">
+            <button id="toggleThemeBtn" class="btn btn-outline-light d-flex align-items-center" type="button"
+              aria-label="Cambiar entre tema claro y oscuro">
+              <i class="bi bi-moon-fill" aria-hidden="true"></i>
+              <span class="visually-hidden" id="themeText">Tema oscuro</span>
+            </button>
+          </div>
+
+          <!-- Login - Contenedor propio -->
+          <div class="nav-item">
+            <button id="btnLogin" class="btn btn-outline-light" type="button" data-bs-toggle="modal"
+              data-bs-target="#loginModal">
+              Login
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MODAL LOGIN (MANTENER IGUAL) -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-tea text-white">
+            <h5 class="modal-title">Inicio de Sesión - Camino del Té</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formLogin">
+              <div class="mb-3">
+                <label for="loginUsuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="loginUsuario" required>
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="loginPassword" required>
+              </div>
+              <button type="submit" class="btn btn-tea w-100">Entrar</button>
+            </form>
+            <div id="loginError" class="alert alert-danger mt-3 d-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="container my-4">
+
+    <!-- Fila principal: sidebar y columnas -->
+    <div class="row g-4">
+      <!-- SIDEBAR: solo para tamaño grande -->
+      <aside class="col-xl-3 d-none d-xl-block">
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Guía rápida</h5>
+            <p class="card-text small">
+              Temperaturas y tiempos de infusionado del té.
+            </p>
+            <ul class="list-group list-group-flush small">
+              <li class="list-group-item">Verde: 70 °C · 2–3 min</li>
+              <li class="list-group-item">Negro: 95 °C · 3–5 min</li>
+              <li class="list-group-item">Blanco: 80 °C · 4–5 min</li>
+              <li class="list-group-item">Oolong: 85 °C · 3–4 min</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="alert alert-success small" role="alert">
+          <i class="bi bi-leaf me-1"></i>
+          Consejo: deja reposar el agua 1 minuto tras hervir antes de infusionar y échala desde cierta distancia para
+          que se oxigene.
+        </div>
+
+        <!-- SECCIÓN SERVICIOS: vertical en sidebar, horizontal abajo -->
+        <section id="servicios" class="mt-5">
+          <h2 class="h4 text-center mb-4">Que te ofrece esta guia</h2>
+          <div class="row g-3 h-100 servicios-responsive">
+            <div class="col-12 col-xl-12 servicios-item">
+              <div class="text-center p-3 border rounded bg-white h-100 d-flex flex-column justify-content-center">
+                <i class="bi bi-journal-text display-6 text-tea mb-2"></i>
+                <h3 class="h6">Servicios</h3>
+                <p class="small text-muted mb-0 flex-grow-1">
+                  Recomendaciones personalizadas de te segun tu gusto y el tiempo del que dispongas.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-xl-12 servicios-item">
+              <div class="text-center p-3 border rounded bg-white h-100 d-flex flex-column justify-content-center">
+                <i class="bi bi-droplet-half display-6 text-tea mb-2"></i>
+                <h3 class="h6">Caracteristicas</h3>
+                <p class="small text-muted mb-0 flex-grow-1">
+                  Tablas de temperaturas, tiempos y origenes de cada variedad.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-xl-12 servicios-item">
+              <div class="text-center p-3 border rounded bg-white h-100 d-flex flex-column justify-content-center">
+                <i class="bi bi-clock-history display-6 text-tea mb-2"></i>
+                <h3 class="h6">Funcionalidades</h3>
+                <p class="small text-muted mb-0 flex-grow-1">
+                  Guia para disfrutar de tus momentos de te estes donde estes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </aside>
+
+
+
+
+      <!-- COLUMNA 1: Introducción + carrusel -->
+      <section class="col-12 col-md-6 col-xl-5">
+        <section id="origen" class="mb-4">
+          <h1 class="h3 mb-3">El arte del té</h1>
+          <p class="text-muted mb-1">
+            Descubre los principales tipos de té, su origen y cómo infusionarlos.
+          </p>
+          <h2 class="h4 mb-3 text-center">
+            <span h2 class="badge bg-tea text-dark me-2 d-inline-block">Ceremonia china del té · 工夫茶</span>
+            <span class="badge bg-light text-muted border d-inline-block">Japón · China · India · Sri Lanka</span>
+          </h2>
+        </section>
+
+        <!-- Carrusel -->
+        <section class="mb-4">
+          <div id="teaCarousel" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <!-- Foto 1-->
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/seed/tea1/200/300/?blur" class="d-block w-100" alt="Té premium">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                  <h3>Té caliente</h3>
+                  <p>Perfecto para comenzar tu día.</p>
+                </div>
+              </div>
+
+              <!-- Foto 2-->
+              <div class="carousel-item">
+                <img src="https://picsum.photos/seed/tea2/200/300/?blur" class="d-block w-100" alt="Infusión de té">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                  <h3>Siempre fresco</h3>
+                  <p>El té desde su origen..</p>
+                </div>
+              </div>
+
+              <!-- Foto 3-->
+              <div class="carousel-item">
+                <img src="https://picsum.photos/seed/tea3/200/300/?blur" class="d-block w-100" alt="Té caliente">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                  <h3>La infusión perfecta</h3>
+                  <p>Temperatura y tiempo ideales.</p>
+                </div>
+              </div>
+
+              <!-- Foto 4 -->
+              <div class="carousel-item">
+                <img src="https://picsum.photos/seed/tea4/200/300/?blur" class="d-block w-100" alt="Hojas de té fresco">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                  <h3>Variedad premium</h3>
+                  <p>Un viaje a través de los sentidos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- flechitas del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#teaCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#teaCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+
+            <!-- Indicadores (puntos abajo) -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#teaCarousel" data-bs-slide-to="0" class=""
+                aria-label="Slide 1 de 4"></button>
+              <button type="button" data-bs-target="#teaCarousel" data-bs-slide-to="1" class=""
+                aria-label="Slide 2 de 4"></button>
+              <button type="button" data-bs-target="#teaCarousel" data-bs-slide-to="2" class="active"
+                aria-current="true" aria-label="Slide actual 3 de 4"></button>
+              <button type="button" data-bs-target="#teaCarousel" data-bs-slide-to="3" class=""
+                aria-label="Slide 4 de 4"></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- cards ceremonia -->
+        <nav aria-label="breadcrumb" class="mb-3">
+          <ol class="breadcrumb small">
+            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Guía básica</li>
+          </ol>
+        </nav>
+
+        <div class=" card shadow-sm mb-3" id="ceremonia">
+          <div class="card-body">
+            <h4 class="card-title">La ceremonia del té</h4>
+            <p class="card-text small">
+              El té como una ceremonia donde cada gesto importa: calentar la tetera, medir las hojas
+              y servir con calma. El objetivo es disfrutar el momento, el té como experiencia sensorial.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLUMNA 2: Tabla + formulario -->
+      <section class="col-12 col-md-6 col-xl-4">
+
+        <!-- Tabla -->
+        <section id="tabla" class="mb-4">
+          <h2 class="h4 mb-3">Tipos de té y cómo tomarlo</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+              <thead class="table-tea">
+                <tr>
+                  <th>Tipo de té</th>
+                  <th>Origen</th>
+                  <th>Temp.</th>
+                  <th>Infusionado</th>
+                </tr>
+              </thead>
+              <!-- js genera la tabla de forma dinámica -->
+              <tbody class="small">
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
+        <!-- Formulario -->
+        <section id="formulario" class="mb-4">
+          <h2 class="h4 mb-3">Suscríbete a la ruta del té</h2>
+          <form id="suscripcionForm" class="card card-body shadow-sm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+              <small class="text-danger d-none" id="nombreError"></small>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="passwordSus" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="passwordSus" required minlength="4">
+            </div>
+
+            <div class="mb-3">
+              <label for="tipo" class="form-label">Tipo de té favorito</label>
+              <select class="form-select" id="tipo">
+                <option value="">Elige una opción</option>
+                <option>Verde</option>
+                <option>Negro</option>
+                <option>Blanco</option>
+                <option>Oolong</option>
+                <option>Pu-erh</option>
+                <option>Tisanas</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <span class="form-label d-block mb-1">Nivel de cafeína</span>
+              <div id="teCheckboxGroup">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="cafeina" id="baja" value="baja">
+                  <label class="form-check-label" for="baja">Baja</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="cafeina" id="media" value="media">
+                  <label class="form-check-label" for="media">Media</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="cafeina" id="alta" value="alta">
+                  <label class="form-check-label" for="alta">Alta</label>
+                </div>
+              </div>
+              <small class="text-danger d-none" id="teTipoError"></small>
+            </div>
+            <div class="mb-3">
+              <label for="comentarios" class="form-label">Comentarios</label>
+              <textarea class="form-control" id="comentarios" rows="3"
+                placeholder="Por ejemplo: me gusta el té floral y suave."></textarea>
+            </div>
+            <div class="d-flex justify-content-between mt-2">
+              <button type="submit" id="submitFormBtn" class="btn btn-tea me-2 flex-grow-1" style="color: #000000;">
+                <i class="bi bi-send me-1"></i> Enviar
+              </button>
+              <button type="reset" id="clearFormBtn" class="btn btn-reset flex-grow-1">
+                Limpiar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </div>
+
+    <!-- SECCIÓN TRES COLUMNAS
+    <section id="servicios" class="mt-5">
+      <h2 class="h4 text-center mb-4">Qué te ofrece esta guía</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="text-center p-3 border rounded bg-white h-100">
+            <i class="bi bi-journal-text display-6 text-tea mb-2"></i>
+            <h3 class="h6">Servicios</h3>
+            <p class="small text-muted mb-0">
+              Recomendaciones personalizadas de té según tu gusto y el tiempo del que dispongas.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="text-center p-3 border rounded bg-white h-100">
+            <i class="bi bi-droplet-half display-6 text-tea mb-2"></i>
+            <h3 class="h6">Características</h3>
+            <p class="small text-muted mb-0">
+              Tablas de temperaturas, tiempos y orígenes de cada variedad.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="text-center p-3 border rounded bg-white h-100">
+            <i class="bi bi-clock-history display-6 text-tea mb-2"></i>
+            <h3 class="h6">Funcionalidades</h3>
+            <p class="small text-muted mb-0">
+              Guía para disfrutar de tus momentos de té estés donde estés.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Contenedor gráfico -->
+    <section class="my-5">
+      <h2 class="h4 mb-3">Temperatura y tiempos de los tés</h2>
+      <p class="text-muted small">
+        Visualización de la temperatura y del tiempo recomendado para cada tipo de té.
+      </p>
+      <div class="d-flex align-items-center mb-2 gap-2">
+        <label for="modoGrafico" class="form-label mb-0 small">Mostrar:</label>
+        <select id="modoGrafico" class="form-select form-select-sm" style="width:auto;">
+          <option value="ambos">Temperatura y tiempo</option>
+          <option value="temp">Temperatura</option>
+          <option value="tiempo">Tiempo</option>
+        </select>
+      </div>
+      <div class="card shadow-sm" style="height: 420px;">
+        <div class="card-body">
+          <canvas id="chartTemperaturas"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-tea text-dark mt-5 py-3">
+    <div class="container">
+      <div class="row align-items-center gy-2">
+        <div class="col-12 col-md-4 text-center text-md-start">
+          <small>&copy; 2026 El Camino del Té · 茶道</small>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <small>Autor: Ana B. Dono</small>
+        </div>
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <a href="#" class="text-dark me-2" aria-label="Instagram">
+            <i class="bi bi-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="text-dark me-2" aria-label="Twitter">
+            <i class="bi bi-twitter-x" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="text-dark" aria-label="Enviar email">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast genérico (reutilizable) -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="formToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div id="formToastBody" class="toast-body">
+
+          <!-- Texto dinámico desde JS -->
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Librería Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- JS propios-->
+  <script src="script.js"></script>
+  <script src="mejoras.js"></script>
+  <script src="interactividad2.js"></script>
+
+  <!-- JS Bootstrap -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Embedded Messaging Salesforce -->
+  <script type="text/javascript">
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'es';
+
+        embeddedservice_bootstrap.init(
+          '00DNS00000rGHKy',
+          'AeroSA',
+          'https://aqua-dev-editon-dev-ed.develop.my.site.com/ESWAeroSA1779151194755',
+          {
+            scrt2URL: 'https://aqua-dev-editon-dev-ed.develop.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="https://aqua-dev-editon-dev-ed.develop.my.site.com/ESWAeroSA1779151194755/assets/js/bootstrap.min.js"
+    onload="initEmbeddedMessaging()">
+    </script>
+</body>
+
+</html>
