@@ -20,6 +20,10 @@ Además, si durante la conversación, el usuario solicita más información, se 
 
 La publicación en GitHub Pages permite disponer de una URL pública servida por HTTPS, requisito indispensable durante las pruebas del agente en un sitio externo. GitHub Pages ofrece hosting estático con HTTPS para repositorios y resulta muy útil para publicar una web HTML/CSS/JS de forma sencilla como la de este proyecto.
 
+Durante la conversación con el agente, es necesario identificarse con nombre completo y correo electrónico, tras lo cual, el agente guiará al usuario durante el registro de un nuevo usuario (separado de los usuarios del formulario. Por motivos de seguridad, no se permite la creación de usuarios con contraseña a través del agente, por lo que esa función aún no está integrada con Salesforce y no dará la oportunidad de loguearse, como sí sucede en el formulario).
+
+El agente permite la creación de un nuevo usuario y la modificación de los datos del usuario ya registrado (empresa, dirección, teléfono, email, preferencias de té, etc.).
+
 ## Mejoras funcionales incorporadas
 
 ### Integración del agente en la página web
