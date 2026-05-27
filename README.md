@@ -19,9 +19,6 @@ Además, si durante la conversación, el usuario solicita más información, se 
 
 
 La publicación en GitHub Pages permite disponer de una URL pública servida por HTTPS, requisito indispensable durante las pruebas del agente en un sitio externo. GitHub Pages ofrece hosting estático con HTTPS para repositorios y resulta muy útil para publicar una web HTML/CSS/JS de forma sencilla como la de este proyecto.
- 
-
-
 
 ## Mejoras funcionales incorporadas
 
@@ -57,6 +54,7 @@ Este ajuste abre la puerta a futuras mejoras como diferenciar visualmente el wid
 La integración del widget también motivó una revisión de accesibilidad, detectando algunos avisos vinculados al contenido embebido dentro del iframe del chat. Parte de estos avisos proceden del propio componente generado por Salesforce, mientras que otros pudieron solventarse revisando parámetros como el idioma configurado o el comportamiento del contenido embebido.
 
 En concreto, los códigos de idioma deben usar etiquetas válidas según BCP 47, como `es-ES` o `en-US`, en lugar de formatos con guion bajo.
+
 <img width="464" height="856" alt="problemas de accesibilidad" src="https://github.com/user-attachments/assets/e2830c0e-398b-49d1-8d42-19db1ccc7a40" />
 
 
